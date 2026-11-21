@@ -1,0 +1,987 @@
+{
+	"info": {
+		"_postman_id": "65da200f-3b36-45db-9cca-82b1751231ce",
+		"name": "Post Software",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28510307",
+		"_collection_link": "https://solar-eclipse-602001-1.postman.co/workspace/My-Workspace~1f4a47d3-c0ca-480a-8fcd-8ed10a55da64/collection/28510307-65da200f-3b36-45db-9cca-82b1751231ce?action=share&source=collection_link&creator=28510307"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/common/Pictures/Screenshots/Screenshot from 2023-09-08 18-09-14.png"
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"fullName\":\"Super Store 1\",\n    \"email\":\"superstore11@example.com\",\n    \"password\":\"superstore11@example.com\",\n    \"store\":\"652e278621d45f399723f9d2\",\n    \"address\":\"Super Store Address\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"email\": \"superadmin@example.com\",\n    // \"password\": \"superadmin@example.com\"\n    // \"email\": \"admin@example.com\",\n    // \"password\" : \"admin@example.com\"\n    \"email\":\"user@example.com\",\n    \"password\":\"admin@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Own",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/parvej/Pictures/Screenshots/Screenshot from 2023-09-28 21-29-18.png",
+									"disabled": true
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"fullName\":\"Super Store 1\",\n    \"password\":\"admin@example.com\",\n    \"store\":\"652e278621d45f399723f9d2\",\n    \"address\":\"Super Store Address\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/parvej/Pictures/Screenshots/Screenshot from 2023-09-28 21-29-18.png",
+									"disabled": true
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"fullName\":\"Super Store 1\",\n    \"password\":\"user@example.com\",\n    \"store\":\"652e278621d45f399723f9d2\",\n    \"address\":\"Super Store Address\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "652e671885455a74cf79a01c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "652ac8ea4a5a299ddf615af1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgoot Pass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/forgot/password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"forgot",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"otp\" : \"947870\",\n    \"token\" : \"REDACTED_SAMPLE_TOKEN\"\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/otp/verify",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"otp",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\" : \"REDACTED_SAMPLE_TOKEN\",\n    \"email\" : \"user@example.com\",\n    \"password\" : \"Parvej@555\",\n    \"confirmPassword\" : \"Parvej@555\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/change/password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"change",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user?role=superadmin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "superadmin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user?role=superadmin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "superadmin"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "create store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/common/Pictures/Screenshots/Screenshot from 2023-09-05 11-48-13.png"
+								},
+								{
+									"key": "data",
+									"value": "{\"name\":\"Super Store Increment\",\"address\":\"Dhaka, Bangladesh\",\"phone\":\"01234339432\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/store",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get store",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/store/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "652d176a64d166089a60bf2b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/store?status=deactive",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "totalUser|desc",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "Incre",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "deactive"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update store",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/common/Pictures/Screenshots/Screenshot from 2023-09-04 15-55-16.png",
+									"disabled": true
+								},
+								{
+									"key": "data",
+									"value": "{\"name\":\"Ajker Deal\",\"address\":\"Dhaka, Bangladesh\",\"phone\":\"01234339432\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/store/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6528e8d489b177e219e60f62"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete store",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/store/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6528edaa86fd8e7bab94dc56"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Fifty\",\n    \"store\" : \"652d3a27cd3ffa870a3aa969\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/common/Pictures/Screenshots/Screenshot from 2023-09-08 18-09-14.png"
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"name\" : \"Product Thiry\",\n    \"description\" : \"Product Description Thiry\",\n    \"category\" : \"652e4927c0ed7233f241f62a\",\n    \"store\": \"652e278621d45f399723f9d2\",\n    \"productCode\" : \"PORD-23\",\n    \"buyingPrice\" : \"4300\",\n    \"sellingPrice\" : \"4000\",\n    \"tax\" : \"8\",\n    \"stock\" : \"100\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"name\" : \"Product One\",\n    \"description\" : \"Product Description Three\",\n    \"category\" : \"6529048a657052372ce61f5f\",\n    \"store\": \"652d3a27cd3ffa870a3aa969\",\n    \"productCode\" : \"PORD-3\",\n    \"buyingPrice\" : \"400\",\n    \"sellingPrice\" : \"500\",\n    \"tax\" : \"10\",\n    \"stock\" : \"50\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/product/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6529224cbe73fe632612bfba"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6529340286fd8e7bab94dc68"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product?category=652e1c1722e50177f426f456",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "paginate",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "652e1c1722e50177f426f456"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "652e2159fef6a97e4938a8db"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Billing",
+			"item": [
+				{
+					"name": "create billing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerName\" : \"Jabbar Khan\",\n    \"customerPhone\" : \"013025652235\",\n    \"cashier\" : \"652e29808b51eec9d5deff61\",\n    \"products\" : [\n        { \"item\" : \"652e3d65c0ed7233f241f615\", \"quantity\" : \"1\", \"discount\": \"10\"},\n        { \"item\" : \"652e20dbfef6a97e4938a8d2\", \"quantity\" : \"3\", \"discount\": \"15\"}\n    ],\n    \"store\" : \"652e278621d45f399723f9d2\",\n    \"paymentMethod\" : \"card\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/billing",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"billing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get billing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/billing/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"billing",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "652e408d377980c9fee21da7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all billing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/billing",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"billing"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "totalDiscount:asc",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "Ka",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setting",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"paymentNotify\" : false,\n    \"stockOut\" : true,\n    \"lowStock\" : true,\n    \"systemUpdate\" : false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/setting/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"setting",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "652bbf848a143e70756942b7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "get file",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/file/:filename",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"file",
+								":filename"
+							],
+							"variable": [
+								{
+									"key": "filename",
+									"value": "ac35997f2172349b11e87d76209b6e48.png"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Store Report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dashboard/reports",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dashboard",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "History",
+			"item": [
+				{
+					"name": "all history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/history",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:4000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}

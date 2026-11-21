@@ -1,0 +1,1 @@
+# Credentials moved to environment variables (see .env.example). Do not store secrets here.
